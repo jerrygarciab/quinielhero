@@ -1,0 +1,8 @@
+{
+  "name": "quinielHero",
+  "app_id": "b46df2dc",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
