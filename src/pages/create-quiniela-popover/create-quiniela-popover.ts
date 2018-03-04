@@ -2,6 +2,7 @@ import { Component }                from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
 
 import { CreateQuinielaPage } from '../create-quiniela/create-quiniela';
+import { JoinQuinielaPage } from '../join-quiniela/join-quiniela';
 
 @Component({
   selector: 'page-create-quiniela-popover',
@@ -19,8 +20,9 @@ export class CreateQuinielaPopoverPage {
 
   private _selectView(event: Event, direction: string): void {
 
-    (direction === 'crear') ? this._navCtrl.push(CreateQuinielaPage) : this._navCtrl.push(CreateQuinielaPage);
+    (direction === 'crear') ? this._navCtrl.push(CreateQuinielaPage) : this._navCtrl.push(JoinQuinielaPage);
     this._viewCtrl.dismiss();
+    
   }
 
 }

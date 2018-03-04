@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { ManageQuinielasPage } from '../pages/manage-quinielas/manage-quinielas';
 import { CreateQuinielaPage } from '../pages/create-quiniela/create-quiniela';
+import { JoinQuinielaPage } from '../pages/join-quiniela/join-quiniela';
 import { LoginPage } from '../pages/login/login';
 import { MyPicksPage } from '../pages/my-picks/my-picks';
 import { UsersStandingsPage } from '../pages/users-standings/users-standings';
@@ -21,6 +22,7 @@ import { SavePicksProvider } from '../providers/save-picks/save-picks';
   declarations: [
     ManageQuinielasPage,
     CreateQuinielaPage,
+    JoinQuinielaPage,
     LoginPage,
     MyPicksPage,
     UsersStandingsPage,
@@ -36,6 +38,7 @@ import { SavePicksProvider } from '../providers/save-picks/save-picks';
   entryComponents: [
     ManageQuinielasPage,
     CreateQuinielaPage,
+    JoinQuinielaPage,
     LoginPage,
     MyPicksPage,
     UsersStandingsPage,
