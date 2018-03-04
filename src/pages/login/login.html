@@ -6,45 +6,22 @@
     <ion-title>Login</ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content class="background">
-
-  <div>
+  <ion-slides pager>
+    <ion-slide *ngFor="let slide of slides">
+      <img [src]="slide.image" class="slide-image" />
+      <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+      <p [innerHTML]="slide.description"></p>
+    </ion-slide>
+  </ion-slides>
+  <div padding>
     <div class="fbBtn">
       <span class="iconFb"></span>
       <span class="buttonText">Login With Facebook</span>
     </div>
-  </div>
-  <div id="gSignInWrapper">
     <div class="googleBtn">
       <span class="iconGoogle"></span>
       <span class="buttonText">Login With Google</span>
     </div>
   </div>
-
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        1 of 3
-      </ion-col>
-      <ion-col col-8>
-        2 of 3 (wider)
-      </ion-col>
-      <ion-col>
-        3 of 3
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        1 of 3
-      </ion-col>
-      <ion-col col-6>
-        2 of 3 (wider)
-      </ion-col>
-      <ion-col>
-        3 of 3
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
 </ion-content>

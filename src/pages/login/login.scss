@@ -1,77 +1,83 @@
 /* Variables*/
 
 /* colors */
-$white: #FFF;
-$background: #e91156;
-$fbBlue: #4C69BA;
-$fbBlueBorder: #354C8C;
-$fbIconBorderColor: #364e92;
-$googleBtnColor: #444;
+$white:                #FFF;
+$background:           #e91156;
+$fbBlue:               #4C69BA;
+$fbBlueBorder:         #354C8C;
+$fbIconBorderColor:    #364e92;
+$googleBtnColor:       #444;
 $googleBtnBorderColor: #888;
-$googleBtnBoxShadow: grey;
+$googleBtnBoxShadow:   grey;
 
 /* measures */
-$btnWidth: 190px;
-$fontSize: 14px;
+//$btnWidth:             190px;
+$btnWidth:             100%;
+$fontSize:             14px;
 
 /* icons */
-$fbIcon: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png';
-$googleIcon: 'https://google-developers.appspot.com/identity/sign-in/g-normal.png';
+$fbIcon:               'https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png';
+$googleIcon:           'https://google-developers.appspot.com/identity/sign-in/g-normal.png';
 
 /* Styles */
 page-login {
-    .background {
-        background-color: $background;
+
+  ion-slides {
+    height:            50%;
+  }
+
+  .background {
+    background-color:  $background;
+  }
+
+  .googleBtn,
+  .fbBtn {
+      display:         inline-block;
+      width:           $btnWidth;
+      white-space:     nowrap;
+  }
+
+  .googleBtn {
+      background:      $white;
+      color:           $googleBtnColor;
+      border:          thin solid $googleBtnBorderColor;
+      box-shadow:      1px 1px 1px $googleBtnBoxShadow;
     }
 
-    .googleBtn,
-    .fbBtn {
-        display: inline-block;
-        width: $btnWidth;
-        white-space: nowrap;
+  .fbBtn {
+      background:      $fbBlue;
+      color:           $white;
+      border:          thin solid $fbBlueBorder;
+      text-shadow:     0 -1px 0 $fbBlueBorder;
+  }
+
+    span.label {
+      font-family:     serif;
+      font-weight:     normal;
     }
 
-    .googleBtn {
-        background: $white;
-        color: $googleBtnColor;
-        border: thin solid $googleBtnBorderColor;
-        box-shadow: 1px 1px 1px $googleBtnBoxShadow;
-      }
-
-    .fbBtn {
-        background: $fbBlue;
-        color: $white;
-        border: thin solid $fbBlueBorder;
-        text-shadow: 0 -1px 0 $fbBlueBorder;
+    span.iconGoogle,
+    span.iconFb {
+      display:         inline-block;
+      vertical-align:  middle;
+      width:           42px;
+      height:          42px;
     }
 
-      span.label {
-        font-family: serif;
-        font-weight: normal;
-      }
+    span.iconGoogle {
+      background:      url($googleIcon) transparent 5px 50% no-repeat;
+    }
 
-      span.iconGoogle,
-      span.iconFb {
-        display: inline-block;
-        vertical-align: middle;
-        width: 42px;
-        height: 42px;
-      }
-
-      span.iconGoogle {
-        background: url($googleIcon) transparent 5px 50% no-repeat;
-      }
-
-      span.iconFb {
-        border-right: $fbIconBorderColor 1px solid;
-        background: url($fbIcon) 8px 10px no-repeat;
-      }
-      span.buttonText {
-        display: inline-block;
-        vertical-align: middle;
-        padding-right: 42px;
-        font-size: $fontSize;
-        font-weight: bold;
-        font-family: 'Roboto', sans-serif;
-      }
+    span.iconFb {
+      border-right:    $fbIconBorderColor 1px solid;
+      background:      url($fbIcon) 8px 10px no-repeat;
+    }
+    span.buttonText {
+      display:         inline-block;
+      vertical-align:  middle;
+      padding-right:   42px;
+      font-size:       $fontSize;
+      font-weight:     bold;
+      font-family:     'Roboto', sans-serif;
+    }
 }
