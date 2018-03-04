@@ -3,7 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { CreateQuinielaPage } from '../pages/create-quiniela/create-quiniela';
+import { ManageQuinielasPage } from '../pages/manage-quinielas/manage-quinielas';
 import { LoginPage } from '../pages/login/login';
 import { MyPicksPage } from '../pages/my-picks/my-picks';
 import { UsersStandingsPage } from '../pages/users-standings/users-standings';
@@ -24,7 +24,7 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Logout', component: LoginPage },
-      { title: 'Administrar Quinielas', component: CreateQuinielaPage },
+      { title: 'Administrar Quinielas', component: ManageQuinielasPage },
       { title: 'Mis Picks', component: MyPicksPage },
       { title: 'Tabla de Posiciones', component: UsersStandingsPage }
     ];

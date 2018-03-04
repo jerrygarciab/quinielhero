@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Crear Quiniela</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="showAddQuinielaPopover()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list inset>
+    <ion-list-header>
+      Mis Quinielas
+    </ion-list-header>
+    <ng-container *ngIf="_quinielas.length > 1; else noQuinielas">
+      <ng-container *ngFor="let quiniela of _quinielas">
+        <ion-item>{{quiniela.name}}</ion-item>
+      </ng-container>
+    </ng-container>
+    <ng-template #noQuinielas>
+      Lo sentimos, no tienes quinielas registradas
+    </ng-template>
+  </ion-list>
+</ion-content>
