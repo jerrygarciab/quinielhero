@@ -3,11 +3,10 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { LoginComponent } from '../components/login/login';
-import { CreateQuinielaComponent } from '../components/create-quiniela/create-quiniela';
-import { MyPicksComponent } from '../components/my-picks/my-picks';
-import { UsersStandingsComponent } from '../components/users-standings/users-standings';
-import { ListPage } from '../components/list/list';
+import { CreateQuinielaPage } from '../pages/create-quiniela/create-quiniela';
+import { LoginPage } from '../pages/login/login';
+import { MyPicksPage } from '../pages/my-picks/my-picks';
+import { UsersStandingsPage } from '../pages/users-standings/users-standings';
 
 @Component({
   templateUrl: 'app.html'
@@ -15,7 +14,7 @@ import { ListPage } from '../components/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginComponent;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -24,10 +23,10 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Logout', component: LoginComponent },
-      { title: 'Administrar Quinielas', component: CreateQuinielaComponent },
-      { title: 'Mis Picks', component: MyPicksComponent },
-      { title: 'Tabla de Posiciones', component: UsersStandingsComponent }
+      { title: 'Logout', component: LoginPage },
+      { title: 'Administrar Quinielas', component: CreateQuinielaPage },
+      { title: 'Mis Picks', component: MyPicksPage },
+      { title: 'Tabla de Posiciones', component: UsersStandingsPage }
     ];
 
   }

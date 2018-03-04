@@ -19,7 +19,7 @@ $fbIcon: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png';
 $googleIcon: 'https://google-developers.appspot.com/identity/sign-in/g-normal.png';
 
 /* Styles */
-login {
+page-login {
     .background {
         background-color: $background;
     }
@@ -31,13 +31,13 @@ login {
         white-space: nowrap;
     }
 
-    .googleBtn { 
+    .googleBtn {
         background: $white;
         color: $googleBtnColor;
         border: thin solid $googleBtnBorderColor;
         box-shadow: 1px 1px 1px $googleBtnBoxShadow;
       }
-    
+
     .fbBtn {
         background: $fbBlue;
         color: $white;

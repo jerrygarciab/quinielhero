@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
-  selector: 'qh-users-standings',
-  templateUrl: 'users-standings.html'
+  selector: 'page-users-standings',
+  templateUrl: 'users-standings.html',
 })
-export class UsersStandingsComponent implements OnInit {
+export class UsersStandingsPage {
 
   public users: Array<Object>;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad UsersStandingsPage');
   }
 
   ngOnInit() {
