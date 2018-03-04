@@ -1,0 +1,8 @@
+<ion-item>
+  <ion-label>Jornada</ion-label>
+  <ion-select [(ngModel)]="gender">
+    <ng-container *ngFor="let week of weeks">
+      <ion-option value="week" [innerText]="week"></ion-option>
+    </ng-container>
+  </ion-select>
+</ion-item>

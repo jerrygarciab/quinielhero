@@ -1,0 +1,25 @@
+<ion-card class="cardBackground">
+  <ion-card-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2 text-start>
+              <ion-icon *ngIf="localScore > 0" (click)="_decreaseScore('local')" name="remove-circle"></ion-icon>
+        </ion-col>
+        <ion-col col-2 text-start>
+            <ion-thumbnail>
+              <img (click)="_increaseScore('local')" [src]="localTeamImg">
+            </ion-thumbnail>
+          </ion-col>
+        <ion-col col-4 text-center padding-top> {{localScore}} vs {{visitorScore}} </ion-col>
+        <ion-col col-2 text-end>
+            <ion-thumbnail>
+              <img (click)="_increaseScore('visitor')" [src]="visitorTeamImg">
+            </ion-thumbnail>
+        </ion-col>
+        <ion-col col-2 text-end>
+              <ion-icon *ngIf="visitorScore > 0" (click)="_decreaseScore('visitor')" name="remove-circle"></ion-icon>
+        </ion-col>
+      </ion-row>
+      </ion-grid>
+  </ion-card-content>
+</ion-card>

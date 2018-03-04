@@ -4,6 +4,7 @@
 // Font path is used to include ionicons,
 // roboto, and noto sans fonts
 $font-path: "../assets/fonts";
+$font-dyane-path: $font-path + "/DyaneRegular.ttf";
 
 
 // The app direction is used to include
@@ -21,6 +22,7 @@ $app-direction: ltr;
 // the Sass variables found in Ionic's source scss files.
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
+$toolbar-background: #e91156;
 
 
 

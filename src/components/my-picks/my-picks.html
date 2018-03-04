@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Mis Picks</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <select-week></select-week>
+    <ng-container *ngFor="let fixture of fixtures">
+        <matches-cards [localTeamImg]="fixture.localImg" [visitorTeamImg]="fixture.visitorImg"></matches-cards>
+    </ng-container>
+    <qh-button [btnText]="'Finalizar'"></qh-button>
+</ion-content>
