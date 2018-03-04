@@ -1,11 +1,11 @@
-import { Component }                from '@angular/core';
+import { Component }                                from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
 
-import { CreateQuinielaPage } from '../create-quiniela/create-quiniela';
-import { JoinQuinielaPage } from '../join-quiniela/join-quiniela';
+import { CreateQuinielaPage }                       from '../create-quiniela/create-quiniela';
+import { JoinQuinielaPage }                         from '../join-quiniela/join-quiniela';
 
 @Component({
-  selector: 'page-create-quiniela-popover',
+  selector:    'page-create-quiniela-popover',
   templateUrl: 'create-quiniela-popover.html',
 })
 export class CreateQuinielaPopoverPage {
@@ -22,7 +22,7 @@ export class CreateQuinielaPopoverPage {
 
     (direction === 'crear') ? this._navCtrl.push(CreateQuinielaPage) : this._navCtrl.push(JoinQuinielaPage);
     this._viewCtrl.dismiss();
-    
+
   }
 
 }

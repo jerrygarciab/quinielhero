@@ -17,6 +17,7 @@ import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SavePicksProvider } from '../providers/save-picks/save-picks';
+import { MiscProvider } from '../providers/misc/misc';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { SavePicksProvider } from '../providers/save-picks/save-picks';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SavePicksProvider
+    SavePicksProvider,
+    MiscProvider
   ]
 })
 export class AppModule {}

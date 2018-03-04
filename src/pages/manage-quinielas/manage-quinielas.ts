@@ -1,17 +1,17 @@
-import { Component }                from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { PopoverController }        from 'ionic-angular';
+import { Component }                 from '@angular/core';
+import { NavController, NavParams }  from 'ionic-angular';
+import { PopoverController }         from 'ionic-angular';
 
 import { CreateQuinielaPopoverPage } from '../create-quiniela-popover/create-quiniela-popover';
 
 @Component({
-  selector: 'page-manage-quinielas',
+  selector:    'page-manage-quinielas',
   templateUrl: 'manage-quinielas.html',
 })
 export class ManageQuinielasPage {
 
     private _popover:   any;
-    private _quinielas: any;
+    private _quinielas: Array<Object>;
 
     constructor(private _navCtrl:     NavController,
                 private _navParams:   NavParams,
@@ -19,12 +19,11 @@ export class ManageQuinielasPage {
 
     ngOnInit() {
 
-      //this._popover.dismiss();
-
-      this._quinielas = [
-        { "name": "quiniela1" },
-        { "name": "quiniela2" }
-      ]
+      // this._quinielas = [
+      //   { "name": "quiniela1" },
+      //   { "name": "quiniela2" }
+      // ]
+      this._quinielas = [];
 
     }
 
