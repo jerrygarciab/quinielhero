@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { ManageQuinielasPage } from '../manage-quinielas/manage-quinielas';
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
@@ -25,11 +27,19 @@ export class LoginPage {
     }
   ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private _navCtrl: NavController,
+              private _navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+
+  private _login(provider: string) {
+
+    this._navCtrl.setRoot(ManageQuinielasPage);
+    this._navCtrl.popToRoot();
+
   }
 
 }

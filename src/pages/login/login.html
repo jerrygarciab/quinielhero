@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-navbar>
+  <!-- <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Login</ion-title>
-  </ion-navbar>
+  </ion-navbar> -->
 </ion-header>
 <ion-content class="background">
   <ion-slides pager>
@@ -15,11 +15,11 @@
     </ion-slide>
   </ion-slides>
   <div padding>
-    <div class="fbBtn">
+    <div class="fbBtn" (click)="_login('facebook')">
       <span class="iconFb"></span>
       <span class="buttonText">Login With Facebook</span>
     </div>
-    <div class="googleBtn">
+    <div class="googleBtn" (click)="_login('google')">
       <span class="iconGoogle"></span>
       <span class="buttonText">Login With Google</span>
     </div>
