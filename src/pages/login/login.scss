@@ -23,11 +23,17 @@ $googleIcon:           'https://google-developers.appspot.com/identity/sign-in/g
 page-login {
 
   ion-slides {
-    height:            50%;
+    height:            60%;
   }
 
   .background {
     background-color:  $background;
+  }
+
+  .swiper-slide
+  img {
+    max-width: 50%;
+    max-height: 50%;
   }
 
   .googleBtn,

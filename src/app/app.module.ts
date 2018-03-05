@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { ManageQuinielasPage } from '../pages/manage-quinielas/manage-quinielas';
@@ -9,6 +10,7 @@ import { LoginPage } from '../pages/login/login';
 import { MyPicksPage } from '../pages/my-picks/my-picks';
 import { UsersStandingsPage } from '../pages/users-standings/users-standings';
 import { CreateQuinielaPopoverPage } from '../pages/create-quiniela-popover/create-quiniela-popover';
+import { InitialFormPage } from '../pages/initial-form/initial-form';
 
 import { ComponentsModule } from '../components/components.module';
 
@@ -28,10 +30,12 @@ import { MiscProvider } from '../providers/misc/misc';
     MyPicksPage,
     UsersStandingsPage,
     CreateQuinielaPopoverPage,
+    InitialFormPage,
     MyApp
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     IonicModule.forRoot(MyApp),
     ComponentsModule
   ],
@@ -44,6 +48,7 @@ import { MiscProvider } from '../providers/misc/misc';
     MyPicksPage,
     UsersStandingsPage,
     CreateQuinielaPopoverPage,
+    InitialFormPage,
     MyApp
   ],
   providers: [

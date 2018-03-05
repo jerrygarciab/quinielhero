@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Registro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="_registerForm" (ngSubmit)="_saveInfo()">
+    <ion-item *ngFor="let inputValue of _formValues">
+      <ion-label floating>{{ inputValue.placeholder }}</ion-label>
+      <ion-input autocomplete="{{inputValue.placeholder}}" type="text" formControlName="{{inputValue.name}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Acepto los términos.</ion-label>
+      <ion-toggle formControlName="terms"></ion-toggle>
+    </ion-item>
+    <!-- <button ion-button type="submit" [disabled]="!_registerForm.valid">Guardar</button> -->
+    <qh-button [btnText]="'Guardar'" [type]="'save'"></qh-button>
+  </form>
+</ion-content>
