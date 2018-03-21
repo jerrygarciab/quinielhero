@@ -25,8 +25,6 @@ export class InitialFormPage {
   private _saveInfo():void {
 
     console.log(this._registerForm.contains('terms').valueOf());
-    //this._navCtrl.setRoot(ManageQuinielasPage);
-    //this._navCtrl.popToRoot();
 
   }
 
