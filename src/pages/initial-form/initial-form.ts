@@ -3,24 +3,34 @@ import { NavController, NavParams }           from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 import { ManageQuinielasPage }                from '../manage-quinielas/manage-quinielas';
+import { LoginProvider } from '../../providers/login/login';
+import { fbInformation } from '../../shared/interfaces';
 
 @Component({
-  selector: 'page-initial-form',
+  selector   : 'page-initial-form',
   templateUrl: 'initial-form.html',
 })
 export class InitialFormPage {
 
-  private _registerForm: FormGroup;
-  private _formValues:   Array<Object>;
-  private _terms:        any;
+  private _registerForm       : FormGroup;
+  private _formValues         : Array<Object>;
+  private _terms              : any;
+  private _predeterminedValues: fbInformation;
 
   constructor(private _navCtrl:     NavController,
-              private _navParams:   NavParams,
-              private _formBuilder: FormBuilder) {
+              private _navParams   : NavParams,
+              private _formBuilder : FormBuilder,
+              private _loginService: LoginProvider) {
 
-    this._createForm();
-
+    this._loginService.$fbInformation
+      .subscribe((res: fbInformation) => {
+        this._predeterminedValues = res;
+      });
+      this._createForm();
+      
   }
+
+  ionViewDidLoad(): void { }
 
   private _saveInfo():void {
 
@@ -31,8 +41,7 @@ export class InitialFormPage {
   private _createForm(): void {
 
     this._formValues = [
-      { name: 'firstName', placeholder: 'Nombre' },
-      { name: 'lastName', placeholder: 'Apellido' },
+      { name: 'name', placeholder: 'Nombre' },
       { name: 'username', placeholder: 'Usuario' },
       { name: 'email', placeholder: 'Email' },
       { name: 'city', placeholder: 'Ciudad' },
@@ -43,22 +52,17 @@ export class InitialFormPage {
   ]
 
     this._registerForm = this._formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName:  ['', Validators.required],
-      username:  ['', Validators.required],
-      email:     ['', Validators.required],
-      city:      ['', Validators.required],
-      state:     ['', Validators.required],
-      country:   ['', Validators.required],
-      favTeam:   ['', Validators.required],
-      terms:     [false, Validators.required],
-      userID:    ['', Validators.required],
+      name    : [this._predeterminedValues.name, Validators.required],
+      username: ['', Validators.required],
+      email   : [this._predeterminedValues.email, Validators.required],
+      city    : ['', Validators.required],
+      state   : ['', Validators.required],
+      country : ['', Validators.required],
+      favTeam : ['', Validators.required],
+      terms   : [false, Validators.required],
+      userID  : [this._predeterminedValues.userId, Validators.required],
     });
 
-  }
-
-  ionViewDidLoad():void {
-    console.log('ionViewDidLoad InitialFormPage');
   }
 
 }

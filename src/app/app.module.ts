@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 import { ManageQuinielasPage } from '../pages/manage-quinielas/manage-quinielas';
 import { CreateQuinielaPage } from '../pages/create-quiniela/create-quiniela';
@@ -20,6 +24,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SavePicksProvider } from '../providers/save-picks/save-picks';
 import { MiscProvider } from '../providers/misc/misc';
+import { LoginProvider } from '../providers/login/login';
+import { CollectionsProvider } from '../providers/collections/collections';
+
+export const firebaseConfig = {
+  apiKey           : 'AIzaSyDpbGTt0fLXm7NlfyFDOMN2JCvj0oc-kXs',
+  authDomain       : 'quinielhero.firebaseapp.com',
+  databaseURL      : 'https://quinielhero.firebaseio.com',
+  projectId        : 'quinielhero',
+  storageBucket    : 'quinielhero.appspot.com',
+  messagingSenderId: '576621860208'
+};
 
 @NgModule({
   declarations: [
@@ -37,9 +52,12 @@ import { MiscProvider } from '../providers/misc/misc';
     BrowserModule,
     ReactiveFormsModule,
     IonicModule.forRoot(MyApp),
-    ComponentsModule
+    ComponentsModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  bootstrap: [IonicApp],
+  bootstrap      : [IonicApp],
   entryComponents: [
     ManageQuinielasPage,
     CreateQuinielaPage,
@@ -56,7 +74,11 @@ import { MiscProvider } from '../providers/misc/misc';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SavePicksProvider,
-    MiscProvider
+    MiscProvider,
+    AngularFireDatabase,
+    AngularFirestore,
+    LoginProvider,
+    CollectionsProvider
   ]
 })
 export class AppModule {}
